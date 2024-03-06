@@ -42,15 +42,20 @@ function loadProjectsIntoHTML() {
             projects.push(project);
           });
 
-        const projectList = document.createElement('ul');
+        const container = document.getElementById('project-list-container');
+        
         projects.forEach(project => {
-            const listItem = document.createElement('li');
-            listItem.textContent = project.title;
-            projectList.appendChild(listItem);
+            const card = document.createElement('div');
+            card.classList.add('project-card');
+
+            const title = document.createElement('h3');
+            title.textContent = project.title;
+            card.appendChild(title);
+            container.appendChild(listItem);
         });
 
-        const container = document.getElementById('project-list-container');
-        container.appendChild(projectList);
+        
+        //container.appendChild(projectList);
 
           console.log(projects);
         })
