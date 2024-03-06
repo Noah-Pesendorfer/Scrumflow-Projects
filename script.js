@@ -51,7 +51,7 @@ function loadProjectsIntoHTML() {
             const title = document.createElement('h3');
             title.textContent = project.title;
             card.appendChild(title);
-            container.appendChild(listItem);
+            container.appendChild(card);
         });
 
         
