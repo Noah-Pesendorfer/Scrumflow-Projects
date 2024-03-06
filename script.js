@@ -41,6 +41,17 @@ function loadProjectsIntoHTML() {
             const project = {id: doc.id, ...projectData};
             projects.push(project);
           });
+
+        const projectList = document.createElement('ul');
+        projects.forEach(project => {
+            const listItem = document.createElement('li');
+            listItem.textContent = project.title;
+            projectList.appendChild(listItem);
+        });
+
+        const container = document.getElementById('project-list-container');
+        container.appendChild(projectList);
+
           console.log(projects);
         })
         .catch(error => {
