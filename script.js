@@ -22,10 +22,34 @@ const auth = getAuth(app);
 onAuthStateChanged(auth, (user) => {
     if (user) {
       console.log("User is signed in with UID:", user.uid);
+      loadProjectsIntoHTML();
     } else {
       console.log("No user is signed in.");
     }
 });
+
+function loadProjectsIntoHTML() {
+    const user = auth.currentUser;
+    if (user) {
+      // Referenz zur 'projects'-Sammlung für den aktuellen Benutzer
+      const projectsRef = collection(db, "users", user.uid, "projects");
+      getDocs(projectsRef)
+        .then(querySnapshot => {
+          const projects = [];
+          querySnapshot.forEach(doc => {
+            const projectData = doc.data();
+            const project = {id: doc.id, ...projectData};
+            projects.push(project);
+          });
+          console.log(projects);
+        })
+        .catch(error => {
+          console.error("Error loading projects: ", error);
+        });
+    } else {
+      console.log("No user signed in.");
+    }
+}
 
 // SIDE MENU
 
