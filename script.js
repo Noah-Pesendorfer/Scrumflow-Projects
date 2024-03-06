@@ -50,6 +50,9 @@ function loadProjectsIntoHTML() {
                     card.classList.add('project-card');
 
                     const title = document.createElement('h3');
+                    if (project.title.length > 14) {
+                        project.title = project.title.substring(0, 12) + '...';
+                    }
                     title.textContent = project.title;
                     card.appendChild(title);
 
