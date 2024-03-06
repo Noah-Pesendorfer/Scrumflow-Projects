@@ -31,34 +31,33 @@ onAuthStateChanged(auth, (user) => {
 function loadProjectsIntoHTML() {
     const user = auth.currentUser;
     if (user) {
-      // Referenz zur 'projects'-Sammlung für den aktuellen Benutzer
-      const projectsRef = collection(db, "users", user.uid, "projects");
-      getDocs(projectsRef)
-        .then(querySnapshot => {
-          const projects = [];
-          querySnapshot.forEach(doc => {
-            const projectData = doc.data();
-            const project = {id: doc.id, ...projectData};
-            projects.push(project);
-          });
+        const projectsRef = collection(db, "users", user.uid, "projects");
+        getDocs(projectsRef)
+            .then(querySnapshot => {
+                const projects = [];
+                querySnapshot.forEach(doc => {
+                    const projectData = doc.data();
+                    const project = { id: doc.id, ...projectData };
+                    projects.push(project);
+                });
 
-        const container = document.getElementById('project-list-container');
-        
-        projects.forEach(project => {
-            const card = document.createElement('div');
-            card.classList.add('project-card');
+                // Container für die Projektliste
+                const container = document.getElementById('project-list-container');
+                
+                // Durch jedes Projekt iterieren und eine Card erstellen
+                projects.forEach(project => {
+                    const card = document.createElement('div');
+                    card.classList.add('project-card');
 
-            const title = document.createElement('h3');
-            title.textContent = project.title;
-            card.appendChild(title);
-            container.appendChild(card);
-        });
+                    const title = document.createElement('h3');
+                    title.textContent = project.title;
+                    card.appendChild(title);
 
-        
-        //container.appendChild(projectList);
+                    // Weitere Informationen können hier hinzugefügt werden, z.B. Beschreibung, Datum usw.
 
-          console.log(projects);
-        })
+                    container.appendChild(card);
+                });
+            })
         .catch(error => {
           console.error("Error loading projects: ", error);
         });
