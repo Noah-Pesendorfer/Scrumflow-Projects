@@ -49,12 +49,26 @@ function loadProjectsIntoHTML() {
                     const card = document.createElement('div');
                     card.classList.add('folder');
 
-                    const title = document.createElement('h3');
+                    const title = document.createElement('h2');
+                    title.classList.add('name');
                     if (project.title.length > 14) {
                         project.title = project.title.substring(0, 12) + '...';
                     }
                     title.textContent = project.title;
                     card.appendChild(title);
+
+                    const options = document.createElement('div');
+                    options.classList.add('options');
+
+                    const option1 = document.createElement('h5');
+                    option1.textContent = 'Option 1';
+                    options.appendChild(option1);
+
+                    const option2 = document.createElement('h5');
+                    option2.textContent = 'Option 2';
+                    options.appendChild(option2);
+
+                    card.appendChild(options);
 
                     // Weitere Informationen können hier hinzugefügt werden, z.B. Beschreibung, Datum usw.
 
