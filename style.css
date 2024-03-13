@@ -634,7 +634,7 @@ body {
   
   .folder {
 	height: 105px;
-	width: 100%;
+	width: 20%;
 	position: relative;
 	background-color: white;
 	border: 1px solid gray;
@@ -645,6 +645,7 @@ body {
 	justify-content: space-around;
 	align-items: center;
 	flex-direction: column;
+	margin-bottom: 5px;
   }
   
   .folder:before {
