@@ -70,11 +70,11 @@ function loadProjectsIntoHTML() {
                     let tasksAmount = taskSnapshot.data().count;
 
                     const option1 = document.createElement('h5');
-                    option1.textContent = 'Tasks' + tasksAmount;
+                    option1.textContent = 'Tasks: ' + tasksAmount;
                     options.appendChild(option1);
 
                     const option2 = document.createElement('h5');
-                    option2.textContent = project.endDate;
+                    option2.textContent = new Date(project.endDate);
                     options.appendChild(option2);
 
                     card.appendChild(options);
