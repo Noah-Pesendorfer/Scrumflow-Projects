@@ -42,7 +42,7 @@ function loadProjectsIntoHTML() {
                 });
 
                 // Container für die Projektliste
-                const container = document.getElementById('container');
+                const container = document.getElementById('project-list-container');
                 
                 // Durch jedes Projekt iterieren und eine Card erstellen
                 projects.forEach(project => {
