@@ -74,8 +74,8 @@ function loadProjectsIntoHTML() {
                     options.appendChild(option1);
 
                     const option2 = document.createElement('h5');
-                    const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
-                    option2.textContent = project.endDate.toLocalDateString('de-DE', optionsDate);;
+                    const endDate = project.endDate.toDate();
+                    option2.textContent = endDate.toDateString();
                     options.appendChild(option2);
 
                     card.appendChild(options);
