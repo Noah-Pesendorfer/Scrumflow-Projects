@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-import { getFirestore, collection, getDoc, getDocs, addDoc, deleteDoc, updateDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+import { getFirestore, collection, getDoc, getDocs, addDoc, deleteDoc, updateDoc, doc, getCountFromServer } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -45,7 +45,7 @@ function loadProjectsIntoHTML() {
                 const container = document.getElementById('project-list-container');
                 
                 // Durch jedes Projekt iterieren und eine Card erstellen
-                projects.forEach(project => {
+                projects.forEach(async project => {
                     const card = document.createElement('div');
                     card.classList.add('folder');
 
@@ -60,12 +60,21 @@ function loadProjectsIntoHTML() {
                     const options = document.createElement('div');
                     options.classList.add('options');
 
+
+
+
+
+                    const tasksRef = collection(db, "users", user.uid, "projects", project.id, "tasks");
+
+                    const taskSnapshot = await getCountFromServer(tasksRef);
+                    let tasksAmount = taskSnapshot.data().count;
+
                     const option1 = document.createElement('h5');
-                    option1.textContent = 'Option 1';
+                    option1.textContent = 'Tasks' + tasksAmount;
                     options.appendChild(option1);
 
                     const option2 = document.createElement('h5');
-                    option2.textContent = 'Option 2';
+                    option2.textContent = project.endDate;
                     options.appendChild(option2);
 
                     card.appendChild(options);
