@@ -640,11 +640,12 @@ body {
 	background-color: white;
 	border: 1px solid gray;
 	border-radius: 0 6px 6px 6px;
-	box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.59);
+	box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.59);
 	padding: 0.25em 0.5em;
 	justify-content: space-around;
 	align-items: center;
 	margin: 10px;
+	margin-bottom: 20px;
   }
   
   .folder:before {
