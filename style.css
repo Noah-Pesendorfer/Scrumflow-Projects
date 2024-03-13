@@ -619,8 +619,7 @@ body {
   .project-list-container {
 	width: 100%;
 	padding: 1em;
-	display: flex;
-	flex-direction: column;
+	display: grid;
 	align-items: center;
   }
   
@@ -645,7 +644,7 @@ body {
 	justify-content: space-around;
 	align-items: center;
 	flex-direction: column;
-	margin-bottom: 5px;
+	margin: 10px;
   }
   
   .folder:before {
