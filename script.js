@@ -47,7 +47,7 @@ function loadProjectsIntoHTML() {
                 // Durch jedes Projekt iterieren und eine Card erstellen
                 projects.forEach(project => {
                     const card = document.createElement('div');
-                    card.classList.add('project-card');
+                    card.classList.add('folder');
 
                     const title = document.createElement('h3');
                     if (project.title.length > 14) {
@@ -131,37 +131,3 @@ switchMode.addEventListener('change', function () {
 		document.body.classList.remove('dark');
 	}
 })
-
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// Get the close button
-var closeBtn = document.getElementById("closeBtn");
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks on the close button, close the modal
-closeBtn.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
