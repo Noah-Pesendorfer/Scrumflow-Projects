@@ -710,3 +710,70 @@ body {
 .plus-button:hover {
     background-color: #2b6fa4; /* Etwas dunklere Blauton beim Darüberfahren */
 }
+
+/*Modal Design*/
+.modal-box {
+    background-color: white;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    padding: 20px;
+    border-radius: 0.5rem;
+}
+
+.close-icon {
+    font-size: 1.25rem;
+    color: #3019BD;
+    float: right;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-box h3 {
+    font-weight: bold;
+    font-size: 1.125rem;
+    color: #3019BD;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.input-text, .input-date, .select-category {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px;
+    border: 1px solid #3019BD;
+    border-radius: 0.375rem;
+}
+
+.select-container {
+    text-align: center;
+}
+
+.select-container p, .modal-box p {
+    font-size: 1rem;
+    color: #3019BD;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.submit-btn {
+    background-color: #3019BD;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: inline-block; /* Zentrieren im Container */
+}
+
+.submit-btn:hover {
+    background-color: #2a17a3;
+}
+
+.modal-box, .modal-action {
+    text-align: center;
+}
+
+/* Zurücksetzen der Margin für das Formular */
+.modal-action form {
+    margin: 0;
+}

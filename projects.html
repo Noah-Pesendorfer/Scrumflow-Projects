@@ -50,23 +50,23 @@
 	<!-- SIDEBAR -->
 	<!-- Fenster zum Hinzufügen von Projekten -->
 	<dialog id="my_modal_1" class="modal">
-		<div class="modal-box bg-white shadow-2xl p-5 rounded-lg">
-			<button class="closeIcon text-2xl text-[#3019BD] float-right">&times;</button>
-			<h3 class="font-bold text-lg text-[#3019BD] mb-5 text-center mt-5">Add Project</h3>
-			<input type="text" placeholder="Name of the project" class="input w-full mb-5 inputTitle border border-[#3019BD] p-2 rounded-md"/>
-			<p class="text-md text-[#3019BD] my-5 text-center">Due date:</p>
-			<input type="date" class="input w-full inputDate mb-5 border border-[#3019BD] p-2 rounded-md"/>
-			<div class="text-center">
-				<p class="text-md text-[#3019BD] my-5">Category</p>
-				<select id="category" class="bg-gray-50 border border-[#3019BD] text-gray-900 text-sm rounded-lg focus:ring-[#3019BD] block w-full p-2.5">
+		<div class="modal-box">
+			<button class="close-icon">&times;</button>
+			<h3>Add Project</h3>
+			<input type="text" placeholder="Name of the project" class="input-text"/>
+			<p>Due date:</p>
+			<input type="date" class="input-date"/>
+			<div class="select-container">
+				<p>Category</p>
+				<select id="category" class="select-category">
 					<option selected="">Select category</option>
 					<option value="School">School</option>
 					<option value="Work">Work</option>
 					<option value="Leisure">Leisure Time</option>
 				</select>
 			</div>
-			<div class="modal-action text-center mt-5">
-				<button class="submit-btn btn bg-[#3019bd] text-white py-2 px-4 rounded-md hover:bg-[#2a17a3]">Submit</button>
+			<div class="modal-action">
+				<button class="submit-btn">Submit</button>
 			</div>
 		</div>
 	</dialog>
