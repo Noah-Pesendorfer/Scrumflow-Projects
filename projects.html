@@ -49,31 +49,28 @@
 	</section>
 	<!-- SIDEBAR -->
 	<!-- Fenster zum Hinzufügen von Projekten -->
-		<dialog id="my_modal_1" class="modal">
-			<div class="modal-box bg-white shadow-2xl">
-				<i class="closeIcon bx bx-x bx-lg text-[#3019BD] self-right"></i>
-				<h3 class="font-bold text-lg text-[#3019BD] mb-5 text-center -mt-10">Add Project</h3>
-				<input type="text" placeholder="Name of the project"
-					   class="input w-full max-w-xl mb-5 inputTitle border-[#3019BD]"/>
-				<p class="text-m text-[#3019BD] my-5 text-center">Due date:</p>
-				<input type="date" class="input w-full max-w-xl inputDate mb-5 border-[#3019BD]"/>
-				<div class="col-span-2 sm:col-span-1">
-					<p class="text-m text-[#3019BD] my-5 text-center">Category</p>
-					<select id="category"
-							class="bg-gray-50 border border-[#3019BD] text-gray-900 text-sm rounded-lg focus:ring-[#3019BD] block w-full p-2.5">
-						<option selected="">Select category</option>
-						<option value="School">School</option>
-						<option value="Work">Work</option>
-						<option value="Leisure">Leisure Time</option>
-					</select>
-				</div>
-				<div class="modal-action">
-					<form method="dialog">
-						<button class="submit-btn btn content-center bg-[#3019bd] text-white">Submit</button>
-					</form>
-				</div>
+	<dialog id="my_modal_1" class="modal">
+		<div class="modal-box bg-white shadow-2xl p-5 rounded-lg">
+			<button class="closeIcon text-2xl text-[#3019BD] float-right">&times;</button>
+			<h3 class="font-bold text-lg text-[#3019BD] mb-5 text-center mt-5">Add Project</h3>
+			<input type="text" placeholder="Name of the project" class="input w-full mb-5 inputTitle border border-[#3019BD] p-2 rounded-md"/>
+			<p class="text-md text-[#3019BD] my-5 text-center">Due date:</p>
+			<input type="date" class="input w-full inputDate mb-5 border border-[#3019BD] p-2 rounded-md"/>
+			<div class="text-center">
+				<p class="text-md text-[#3019BD] my-5">Category</p>
+				<select id="category" class="bg-gray-50 border border-[#3019BD] text-gray-900 text-sm rounded-lg focus:ring-[#3019BD] block w-full p-2.5">
+					<option selected="">Select category</option>
+					<option value="School">School</option>
+					<option value="Work">Work</option>
+					<option value="Leisure">Leisure Time</option>
+				</select>
 			</div>
-		</dialog>
+			<div class="modal-action text-center mt-5">
+				<button class="submit-btn btn bg-[#3019bd] text-white py-2 px-4 rounded-md hover:bg-[#2a17a3]">Submit</button>
+			</div>
+		</div>
+	</dialog>
+	
 
 
 	<!-- CONTENT -->
