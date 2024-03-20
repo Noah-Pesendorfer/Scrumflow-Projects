@@ -626,7 +626,7 @@ body {
 	justify-content: center !important; /* Zentriert das Grid */
   }
   
-  
+
   .name {
 	width: 10em;
 	white-space: nowrap;
@@ -688,3 +688,22 @@ body {
 	column-gap: 1em;
   }
 
+/*add Project button*/
+.plus-button {
+    background-color: #3C91E6; /* Blaue Hintergrundfarbe */
+    color: white; /* Weiße Textfarbe */
+    font-size: 24px; /* Größe des Pluszeichens */
+    border: none; /* Keinen Rand */
+    padding: 10px 20px; /* Innenabstand */
+    border-radius: 5px; /* Abgerundete Ecken */
+    cursor: pointer; /* Zeigt den Cursor als Zeiger an, wenn man über den Button fährt */
+    font-family: Arial, sans-serif; /* Schriftart */
+    display: flex; /* Flexibles Box-Layout-Modell */
+    align-items: center; /* Zentriert den Inhalt des Buttons vertikal */
+    justify-content: center; /* Zentriert den Inhalt des Buttons horizontal */
+}
+
+/* Stil für den Hover-Zustand des Buttons */
+.plus-button:hover {
+    background-color: #2b6fa4; /* Etwas dunklere Blauton beim Darüberfahren */
+}
