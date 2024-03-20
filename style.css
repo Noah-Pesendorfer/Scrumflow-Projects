@@ -165,7 +165,7 @@ body {
 
 /* CONTENT */
 #content {
-	position: relative;
+	position: absolute;
 	width: calc(100% - 280px);
 	left: 280px;
 	transition: .3s ease;
