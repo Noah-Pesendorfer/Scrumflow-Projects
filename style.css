@@ -617,9 +617,9 @@ body {
 
   /*Trying Project Styles*/
   .project-list-container {
-	font-family: var(--poppins);
+	font-family: var(--poppins) !important;
 	width: 100% !important;
-	display: grid !important;
+	display: inline-block !important;
 	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
 	gap: 20px !important; /* Abstand zwischen den Karten */
 	padding: 20px !important;
