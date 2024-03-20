@@ -46,6 +46,7 @@ body.dark {
 
 body {
 	background: var(--grey);
+	font-family: var(--poppins);
 	overflow-x: hidden;
 }
 
@@ -170,6 +171,7 @@ body {
 #content {
 	position: absolute;
 	width: calc(100% - 280px);
+	font-family: var(--poppins);
 	left: 280px;
 	transition: .3s ease;
 }
