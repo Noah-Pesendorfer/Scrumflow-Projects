@@ -156,6 +156,7 @@ switchMode.addEventListener('change', function () {
 	}
 })
 
+const addBtn = document.querySelector('#addBtn');
 addBtn.addEventListener('click', (e) => {
     e.preventDefault();
     let projectTitle = titleEl.value;
