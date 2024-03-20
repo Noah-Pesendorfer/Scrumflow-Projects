@@ -619,13 +619,13 @@ body {
   .project-list-container {
 	width: 100% !important;
 	display: grid !important;
-	grid-template-columns: auto auto auto !important;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
 	gap: 20px !important; /* Abstand zwischen den Karten */
 	padding: 20px !important;
 	justify-content: center !important; /* Zentriert das Grid */
   }
   
-  
+
   .name {
 	width: 10em;
 	white-space: nowrap;
@@ -633,47 +633,57 @@ body {
 	text-overflow: ellipsis;
 	font-size: 1em;
   }
-  
   .folder {
-	height: 105px;
-	width: 20%;
-	position: relative;
-	background-color: white;
-	border: 1px solid gray;
-	border-radius: 0 6px 6px 6px;
-	box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.59);
-	padding: 0.25em 0.5em;
-	justify-content: space-around;
-	align-items: center;
-	margin: 10px;
-	margin-bottom: 20px;
-  }
+    height: 105px;
+    width: 20%;
+    position: relative;
+    background-color: #f8f9fa; /* Ein sanfterer Weißton */
+    border: 1px solid #e0e0e0; /* Weicheres Grau für die Grenze */
+    border-radius: 12px; /* Stärker gerundete Ecken */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Weicherer Schatten für mehr Tiefe */
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    margin-bottom: 20px; /* Korrigiert */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Glatte Übergänge für Hover-Effekt */
+}
+
+.folder:hover {
+    transform: translateY(-5px); /* Leichter Hover-Effekt */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Stärkerer Schatten beim Hover */
+}
+
+.folder:before {
+    content: "";
+    width: 50%;
+    height: 12px;
+    border-radius: 12px 12px 0 0;
+    background-color: #e0e0e0; /* Akzentfarbe für das "Tab" */
+    position: absolute;
+    top: -12px;
+    left: 25%; /* Zentriert das Tab über dem Ordner */
+    transition: background-color 0.3s ease; /* Glatte Übergänge für Hover-Effekt */
+}
+
+.folder:hover:before {
+    background-color: #cccccc; /* Dunklere Akzentfarbe beim Hover */
+}
+
+.folder::after {
+    content: '';
+    position: absolute;
+    left:  0.8em;
+    width: 4em;
+    height: 5px;
+    top: -0.8em;
+    background: #7036E9; /* Helle Akzentfarbe */
+    border-radius: 0 0 5px 5px;
+}  
   
-  
-  .folder:before {
-	content: "";
-	width: 50%;
-	height: 12px;
-	border-radius: 0 20px 0 0;
-	background-color: white;
-	border-top: 1px solid gray;
-	border-left: 1px solid gray;
-	border-right: 1px solid gray;
-	position: absolute;
-	top: -13px;
-	left: -1px;
-  }
   .options {
 	display: flex;
 	column-gap: 1em;
   }
-  .folder::after{
-	content: '';
-	position: absolute;
-	left:  0.8em;
-	width: 4em;
-	height: 5px;
-	top: -0.8em;
-	background: #7036E9;
-	border-radius: 0 0 5px 5px;
-  }
+
