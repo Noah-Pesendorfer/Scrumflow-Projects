@@ -617,12 +617,12 @@ body {
 
   /*Trying Project Styles*/
   .project-list-container {
-	width: 100%;
-	display: grid;
-	grid-template-columns: auto auto auto;
-	gap: 20px; /* Abstand zwischen den Karten */
-	padding: 20px;
-	justify-content: center; /* Zentriert das Grid */
+	width: 100% !important;
+	display: grid !important;
+	grid-template-columns: auto auto auto !important;
+	gap: 20px !important; /* Abstand zwischen den Karten */
+	padding: 20px !important;
+	justify-content: center !important; /* Zentriert das Grid */
   }
   
   .name {
