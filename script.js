@@ -156,7 +156,7 @@ switchMode.addEventListener('change', function () {
 	}
 })
 
-const addBtn = document.querySelector('#addBtn');
+const addBtn = document.querySelector('.submit-btn');
 addBtn.addEventListener('click', (e) => {
     e.preventDefault();
     let projectTitle = titleEl.value;
