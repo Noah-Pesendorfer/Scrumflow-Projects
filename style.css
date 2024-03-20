@@ -712,9 +712,13 @@ body {
 }
 
 /*Modal Design*/
+dialog{
+	top: 50%;
+    left: 50%;
+}
 .modal-box {
     background-color: white;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /*box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);*/
     padding: 20px;
     border-radius: 0.5rem;
 }
