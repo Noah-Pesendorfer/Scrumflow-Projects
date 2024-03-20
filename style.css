@@ -710,7 +710,6 @@ body {
 .plus-button:hover {
     background-color: #2b6fa4; /* Etwas dunklere Blauton beim Darüberfahren */
 }
-
 /*Modal Design*/
 dialog{
 	top: 20%;
