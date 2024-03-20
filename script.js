@@ -160,7 +160,6 @@ const addBtn = document.querySelector('.submit-btn');
 addBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
-console.log("l");
 
     let projectTitle = titleEl.value;
     let projectDate = new Date(dateEl.value);
