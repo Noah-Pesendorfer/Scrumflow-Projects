@@ -155,3 +155,38 @@ switchMode.addEventListener('change', function () {
 		document.body.classList.remove('dark');
 	}
 })
+
+addBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    let projectTitle = titleEl.value;
+    let projectDate = new Date(dateEl.value);
+    let projectCategory = category.value;
+
+    const newProject = {
+        title: projectTitle,
+        dueDate: projectDate,
+        category: projectCategory
+    }
+    addProjectToFirestore(newProject);
+
+});
+ 
+function addProjectToFirestore(newProject) {
+    const user = auth.currentUser;
+    if (!user) {
+        alert("You must be logged in to add events.");
+        return;
+    }
+
+    const projectsRef = collection(db, "users", user.uid, "projects");
+    addDoc(projectsRef, newProject).then(docRef => {
+        newProject.id = docRef.id;
+        projectsArr.push(newProject);
+        showProjects();
+        closeIcon.click();
+    }).catch(error => {
+        console.error("Error adding event: ", error);
+    });
+
+
+}
