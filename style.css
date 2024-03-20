@@ -625,6 +625,7 @@ body {
 	justify-content: center !important; /* Zentriert das Grid */
   }
   
+  
   .name {
 	width: 10em;
 	white-space: nowrap;
