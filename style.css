@@ -713,7 +713,7 @@ body {
 
 /*Modal Design*/
 dialog{
-	top: 50%;
+	top: 20%;
     left: 50%;
 }
 .modal-box {
