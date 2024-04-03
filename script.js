@@ -156,29 +156,6 @@ switchMode.addEventListener('change', function () {
 	}
 })
 
-/*const addBtn = document.querySelector('.submit-btn'),
-    titleEl = document.querySelector('.input-text'),
-    dateEl=document.querySelector('.input-date'),
-    category=document.querySelector('.select-category');
-
-const submitBtn = document.getElementById('submitBtn');
-submitBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    console.log("Add-Funktion")
-    let projectTitle = titleEl.value;
-    let projectDate = new Date(dateEl.value);
-    let projectCategory = category.value;
-
-    const newProject = {
-        title: projectTitle,
-        endDate: projectDate,
-        category: projectCategory
-    }
-    addProjectToFirestore(newProject);
-
-});*/
-
 const titleEl = document.querySelector('.input-text');
 const dateEl = document.querySelector('.input-date');
 const category = document.querySelector('.select-category');
