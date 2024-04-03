@@ -134,7 +134,8 @@
 				endDate: projectDate,
 				category: projectCategory
 			}
-			addProjectToFirestore1(newProject);
+			import {addProjectToFirestore} from "./script";
+			addProjectToFirestore(newProject);
 
 		});
 	</script>

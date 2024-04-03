@@ -178,7 +178,7 @@ submitBtn.addEventListener('click', (e) => {
 });
 
 
-function addProjectToFirestore(newProject) {
+export function addProjectToFirestore(newProject) {
     const user = auth.currentUser;
     if (!user) {
         alert("You must be logged in to add events.");
