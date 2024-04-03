@@ -163,14 +163,14 @@ const addBtn = document.querySelector('.submit-btn'),
 addBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
-
+    console.log("Add-Funktion")
     let projectTitle = titleEl.value;
     let projectDate = new Date(dateEl.value);
     let projectCategory = category.value;
 
     const newProject = {
         title: projectTitle,
-        dueDate: projectDate,
+        endDate: projectDate,
         category: projectCategory
     }
     addProjectToFirestore(newProject);
