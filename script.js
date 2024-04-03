@@ -156,7 +156,7 @@ switchMode.addEventListener('change', function () {
 	}
 })
 
-const addBtn = document.querySelector('.submit-btn'),
+/*const addBtn = document.querySelector('.submit-btn'),
     titleEl = document.querySelector('.input-text'),
     dateEl=document.querySelector('.input-date'),
     category=document.querySelector('.select-category');
@@ -177,7 +177,7 @@ submitBtn.addEventListener('click', (e) => {
     }
     addProjectToFirestore(newProject);
 
-});
+});*/
  
 function addProjectToFirestore(newProject) {
     const user = auth.currentUser;
