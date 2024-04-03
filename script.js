@@ -178,7 +178,30 @@ submitBtn.addEventListener('click', (e) => {
     addProjectToFirestore(newProject);
 
 });*/
- 
+
+const titleEl = document.querySelector('.input-text');
+const dateEl = document.querySelector('.input-date');
+const category = document.querySelector('.select-category');
+
+const submitBtn = document.getElementById('submitBtn');
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    console.log("Add-Funktion")
+    let projectTitle = titleEl.value;
+    let projectDate = new Date(dateEl.value);
+    let projectCategory = category.value;
+
+    const newProject = {
+        title: projectTitle,
+        endDate: projectDate,
+        category: projectCategory
+    }
+    addProjectToFirestore(newProject);
+
+});
+
+
 function addProjectToFirestore(newProject) {
     const user = auth.currentUser;
     if (!user) {
@@ -195,6 +218,4 @@ function addProjectToFirestore(newProject) {
     }).catch(error => {
         console.error("Error adding event: ", error);
     });
-
-
 }
