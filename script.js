@@ -159,8 +159,10 @@ switchMode.addEventListener('change', function () {
 const addBtn = document.querySelector('.submit-btn'),
     titleEl = document.querySelector('.input-text'),
     dateEl=document.querySelector('.input-date'),
-    category=document.querySelector('.select-category')
-addBtn.addEventListener('click', (e) => {
+    category=document.querySelector('.select-category');
+
+const submitBtn = document.getElementById('submitBtn');
+submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
     console.log("Add-Funktion")
