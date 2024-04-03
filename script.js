@@ -175,7 +175,6 @@ submitBtn.addEventListener('click', (e) => {
         category: projectCategory
     }
     addProjectToFirestore(newProject);
-
 });
 
 
