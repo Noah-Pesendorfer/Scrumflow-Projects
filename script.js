@@ -48,6 +48,7 @@ function loadProjectsIntoHTML() {
                 projects.forEach(async project => {
                     const card = document.createElement('div');
                     card.classList.add('folder');
+                    card.setAttribute('data-project-id', project.id);
 
                     const title = document.createElement('h2');
                     title.classList.add('name');
