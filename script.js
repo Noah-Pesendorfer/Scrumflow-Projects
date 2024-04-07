@@ -27,14 +27,14 @@ onAuthStateChanged(auth, (user) => {
       console.log("No user is signed in.");
     }
 });
-
+const projects = [];
 function loadProjectsIntoHTML() {
     const user = auth.currentUser;
     if (user) {
         const projectsRef = collection(db, "users", user.uid, "projects");
         getDocs(projectsRef)
             .then(querySnapshot => {
-                const projects = [];
+
                 querySnapshot.forEach(doc => {
                     const projectData = doc.data();
                     const project = { id: doc.id, ...projectData };
@@ -78,7 +78,7 @@ function loadProjectsIntoHTML() {
                     }
 
                     const folderStyle = document.createElement('style');
-                    folderStyle.textContent = `.folder:nth-child(${projects.indexOf(project) + 1})::after { background-color: ${backgroundColor}; }`;
+                    folderStyle.textContent = `.folder[data-project-id="${project.id}"]::after { background-color: ${backgroundColor}; }`;
                     document.head.appendChild(folderStyle);
 
                     const tasksRef = collection(db, "users", user.uid, "projects", project.id, "tasks");
@@ -175,8 +175,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const projectsRef = collection(db, "users", user.uid, "projects");
         addDoc(projectsRef, newProject).then(docRef => {
             newProject.id = docRef.id;
-            projectsArr.push(newProject);
-            showProjects();
+            projects.push(newProject);
+            loadProjectsIntoHTML();
             closeIcon.click();
         }).catch(error => {
             console.error("Error adding event: ", error);
