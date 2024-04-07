@@ -135,7 +135,7 @@ const dateEl = document.querySelector('.input-date');
 const category = document.querySelector('.select-category');
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('#my_modal_1 .modal-box .modal-action.submit-btn').addEventListener('click', (e) => {
+    document.querySelector('#submitBtn').addEventListener('click', (e) => {
         e.preventDefault();
 
         console.log("Add-Funktion")
