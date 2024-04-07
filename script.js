@@ -78,7 +78,7 @@ function loadProjectsIntoHTML() {
                     }
 
                     const folderStyle = document.createElement('style');
-                    folderStyle.textContent = `.folder::after { background-color: ${backgroundColor}; }`;
+                    folderStyle.textContent = `.folder:nth-child(${projects.indexOf(project) + 1})::after { background-color: ${backgroundColor}; }`;
                     document.head.appendChild(folderStyle);
 
                     const tasksRef = collection(db, "users", user.uid, "projects", project.id, "tasks");
