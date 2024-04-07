@@ -177,9 +177,26 @@ document.addEventListener('DOMContentLoaded', function () {
         const projectsRef = collection(db, "users", user.uid, "projects");
         addDoc(projectsRef, newProject).then(docRef => {
             newProject.id = docRef.id;
+
             projects.push(newProject);
-            //loadProjectsIntoHTML();
-            closeIcon.click();
+
+
+            //Ansicht schließen
+            const my_modal_1 = document.getElementById('my_modal_1');
+            my_modal_1.close();
+
+            // Zurücksetzen der Felder
+            const inputText = document.querySelector('#my_modal_1 .input-text');
+            const inputDate = document.querySelector('#my_modal_1 .input-date');
+            const selectCategory = document.querySelector('#my_modal_1 .select-category');
+
+            inputText.value = '';
+            inputDate.value = '';
+            selectCategory.selectedIndex = 0;
+
+            //Seite neu laden
+            location.reload();
+
         }).catch(error => {
             console.error("Error adding event: ", error);
         });
