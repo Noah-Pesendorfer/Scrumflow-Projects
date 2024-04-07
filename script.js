@@ -166,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
             category: projectCategory
         }
 
+
         const user = auth.currentUser;
         if (!user) {
             alert("You must be logged in to add events.");
