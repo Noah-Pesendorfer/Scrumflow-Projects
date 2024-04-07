@@ -116,22 +116,6 @@ menuBar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
 })
 
-const searchButton = document.querySelector('#content nav form .form-input button');
-const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
-const searchForm = document.querySelector('#content nav form');
-
-searchButton.addEventListener('click', function (e) {
-	if(window.innerWidth < 576) {
-		e.preventDefault();
-		searchForm.classList.toggle('show');
-		if(searchForm.classList.contains('show')) {
-			searchButtonIcon.classList.replace('bx-search', 'bx-x');
-		} else {
-			searchButtonIcon.classList.replace('bx-x', 'bx-search');
-		}
-	}
-})
-
 if(window.innerWidth < 768) {
 	sidebar.classList.add('hide');
 } else if(window.innerWidth > 576) {
@@ -160,7 +144,7 @@ const titleEl = document.querySelector('.input-text');
 const dateEl = document.querySelector('.input-date');
 const category = document.querySelector('.select-category');
 
-document.querySelector('#submitBtn').addEventListener('click', (e) => {
+document.querySelector('#my_modal_1 div .modal-action.submit-btn').addEventListener('click', (e) => {
     e.preventDefault();
 
     console.log("Add-Funktion")
