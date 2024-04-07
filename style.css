@@ -795,4 +795,5 @@ dialog{
 	width: 20px; /* Anpassen der Breite der Farbkästchen */
 	height: 20px; /* Anpassen der Höhe der Farbkästchen */
 	margin-right: 5px; /* Anpassen des Abstands zwischen Farbkästchen und Text */
+	border: 1px solid #000;
 }
