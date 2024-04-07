@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
         addDoc(projectsRef, newProject).then(docRef => {
             newProject.id = docRef.id;
 
-            projects.push(newProject);
+            //projects.push(newProject);
 
 
             //Ansicht schließen
