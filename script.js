@@ -61,8 +61,25 @@ function loadProjectsIntoHTML() {
                     options.classList.add('options');
 
 
+                    let backgroundColor;
+                    switch (project.category) {
+                        case 'School':
+                            backgroundColor = '#FF5733'; // Beispielhafte Farbe für die Kategorie 'School'
+                            break;
+                        case 'Work':
+                            backgroundColor = '#36A2EB'; // Beispielhafte Farbe für die Kategorie 'Work'
+                            break;
+                        case 'Leisure':
+                            backgroundColor = '#4CAF50'; // Beispielhafte Farbe für die Kategorie 'Leisure'
+                            break;
+                        default:
+                            backgroundColor = '#7036E9'; // Standardfarbe
+                            break;
+                    }
 
-
+                    const folderStyle = document.createElement('style');
+                    folderStyle.textContent = `.folder::after { background-color: ${backgroundColor}; }`;
+                    document.head.appendChild(folderStyle);
 
                     const tasksRef = collection(db, "users", user.uid, "projects", project.id, "tasks");
 
