@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import { getFirestore, collection, getDoc, getDocs, addDoc, deleteDoc, updateDoc, doc, getCountFromServer } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+import {document} from "postcss";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDZJTH0Znyi13etPM6Ag5M-lQ_WeqXOIsU",
@@ -134,39 +135,40 @@ const titleEl = document.querySelector('.input-text');
 const dateEl = document.querySelector('.input-date');
 const category = document.querySelector('.select-category');
 
-document.querySelector('#my_modal_1 .modal-box .modal-action.submit-btn').addEventListener('click', (e) => {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('#my_modal_1 .modal-box .modal-action.submit-btn').addEventListener('click', (e) => {
+        e.preventDefault();
 
-    console.log("Add-Funktion")
-    let projectTitle = titleEl.value;
-    let projectDate = new Date(dateEl.value);
-    let projectCategory = category.value;
+        console.log("Add-Funktion")
+        let projectTitle = titleEl.value;
+        let projectDate = new Date(dateEl.value);
+        let projectCategory = category.value;
 
-    const newProject = {
-        title: projectTitle,
-        endDate: projectDate,
-        category: projectCategory
-    }
+        const newProject = {
+            title: projectTitle,
+            endDate: projectDate,
+            category: projectCategory
+        }
 
-    const user = auth.currentUser;
-    if (!user) {
-        alert("You must be logged in to add events.");
-        return;
-    }
+        const user = auth.currentUser;
+        if (!user) {
+            alert("You must be logged in to add events.");
+            return;
+        }
 
-    const projectsRef = collection(db, "users", user.uid, "projects");
-    addDoc(projectsRef, newProject).then(docRef => {
-        newProject.id = docRef.id;
-        projectsArr.push(newProject);
-        showProjects();
-        closeIcon.click();
-    }).catch(error => {
-        console.error("Error adding event: ", error);
+        const projectsRef = collection(db, "users", user.uid, "projects");
+        addDoc(projectsRef, newProject).then(docRef => {
+            newProject.id = docRef.id;
+            projectsArr.push(newProject);
+            showProjects();
+            closeIcon.click();
+        }).catch(error => {
+            console.error("Error adding event: ", error);
+        });
+
+        //addProjectToFirestore(newProject);
     });
-
-    //addProjectToFirestore(newProject);
 });
-
 
 export function addProjectToFirestore(newProject) {
     const user = auth.currentUser;
