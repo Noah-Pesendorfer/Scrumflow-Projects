@@ -27,14 +27,14 @@ onAuthStateChanged(auth, (user) => {
       console.log("No user is signed in.");
     }
 });
-const projects = [];
+
 function loadProjectsIntoHTML() {
     const user = auth.currentUser;
     if (user) {
         const projectsRef = collection(db, "users", user.uid, "projects");
         getDocs(projectsRef)
             .then(querySnapshot => {
-
+                const projects = [];
                 querySnapshot.forEach(doc => {
                     const projectData = doc.data();
                     const project = { id: doc.id, ...projectData };
@@ -176,30 +176,10 @@ document.addEventListener('DOMContentLoaded', function () {
         addDoc(projectsRef, newProject).then(docRef => {
             newProject.id = docRef.id;
             projects.push(newProject);
-            loadProjectsIntoHTML();
+            //loadProjectsIntoHTML();
             closeIcon.click();
         }).catch(error => {
             console.error("Error adding event: ", error);
         });
-
-        //addProjectToFirestore(newProject);
     });
 });
-
-export function addProjectToFirestore(newProject) {
-    const user = auth.currentUser;
-    if (!user) {
-        alert("You must be logged in to add events.");
-        return;
-    }
-
-    const projectsRef = collection(db, "users", user.uid, "projects");
-    addDoc(projectsRef, newProject).then(docRef => {
-        newProject.id = docRef.id;
-        projectsArr.push(newProject);
-        showProjects();
-        closeIcon.click();
-    }).catch(error => {
-        console.error("Error adding event: ", error);
-    });
-}
