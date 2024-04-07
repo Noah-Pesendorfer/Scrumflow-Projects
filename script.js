@@ -134,7 +134,7 @@ const titleEl = document.querySelector('.input-text');
 const dateEl = document.querySelector('.input-date');
 const category = document.querySelector('.select-category');
 
-document.querySelector('#my_modal_1 div .modal-action.submit-btn').addEventListener('click', (e) => {
+document.querySelector('#my_modal_1 .modal-box .modal-action.submit-btn').addEventListener('click', (e) => {
     e.preventDefault();
 
     console.log("Add-Funktion")
