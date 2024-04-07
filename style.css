@@ -780,3 +780,19 @@ dialog{
 .modal-action form {
     margin: 0;
 }
+
+.legend {
+	display: flex;
+}
+
+.color-key {
+	display: flex;
+	align-items: center;
+	margin-left: 20px; /* Anpassen des Abstands zwischen den Farbschlüsselboxen */
+}
+
+.color {
+	width: 20px; /* Anpassen der Breite der Farbkästchen */
+	height: 20px; /* Anpassen der Höhe der Farbkästchen */
+	margin-right: 5px; /* Anpassen des Abstands zwischen Farbkästchen und Text */
+}
