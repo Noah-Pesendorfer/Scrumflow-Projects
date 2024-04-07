@@ -160,8 +160,7 @@ const titleEl = document.querySelector('.input-text');
 const dateEl = document.querySelector('.input-date');
 const category = document.querySelector('.select-category');
 
-const submitBtn = document.getElementById('submitBtn');
-submitBtn.addEventListener('click', (e) => {
+document.querySelector('#submitBtn').addEventListener('click', (e) => {
     e.preventDefault();
 
     console.log("Add-Funktion")
@@ -174,7 +173,24 @@ submitBtn.addEventListener('click', (e) => {
         endDate: projectDate,
         category: projectCategory
     }
-    addProjectToFirestore(newProject);
+
+    const user = auth.currentUser;
+    if (!user) {
+        alert("You must be logged in to add events.");
+        return;
+    }
+
+    const projectsRef = collection(db, "users", user.uid, "projects");
+    addDoc(projectsRef, newProject).then(docRef => {
+        newProject.id = docRef.id;
+        projectsArr.push(newProject);
+        showProjects();
+        closeIcon.click();
+    }).catch(error => {
+        console.error("Error adding event: ", error);
+    });
+
+    //addProjectToFirestore(newProject);
 });
 
 
