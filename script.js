@@ -63,7 +63,6 @@ function loadProjectsIntoHTML() {
                         }
                     });
 
-                    card.appendChild(deleteButton);
 
                     const title = document.createElement('h2');
                     title.classList.add('name');
@@ -112,6 +111,7 @@ function loadProjectsIntoHTML() {
                     options.appendChild(option2);
 
                     card.appendChild(options);
+                    card.appendChild(deleteButton);
 
                     // Weitere Informationen können hier hinzugefügt werden, z.B. Beschreibung, Datum usw.
 
