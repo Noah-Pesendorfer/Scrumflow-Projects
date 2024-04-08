@@ -9,46 +9,80 @@
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@^3.0/dist/tailwind.min.css" rel="stylesheet">
+	<link href="navbar-style.css" rel="stylesheet">
 	<script src="addProject.js"></script>
 </head>
 <body>
 
-	<!-- SIDEBAR -->
-	<section id="sidebar">
-		<a href="#" class="brand">
-			<i class='bx bxs-smile'></i>
-			<span class="text">Scrumflow</span>
-		</a>
-		<ul class="side-menu top">
-			<li>
-				<a href="index.html">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
-				</a>
-			</li>
-			<li class="active">
-				<a href="projects.html">
-					<i class='bx bxs-shopping-bag-alt' ></i>
-					<span class="text">Projects</span>
-				</a>
-			</li>
-		</ul>
-		<ul class="side-menu">
-			<li>
-				<a href="#">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Settings</span>
-				</a>
-			</li>
-			<li>
-				<a href="#" class="logout">
-					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
-				</a>
-			</li>
-		</ul>
-	</section>
-	<!-- SIDEBAR -->
+	<!-- Navbar -->
+	<nav class="sidebar close">
+		<header>
+			<div class="image-text">
+					<span class="image">
+						<img src="images/Sf.png" alt="">
+					</span>
+
+				<div class="text logo-text">
+					<span class="name">Scrumflow</span>
+					<span class="profession">App Interface</span>
+				</div>
+			</div>
+
+			<i class='bx bx-chevron-right toggle'></i>
+		</header>
+
+		<div class="menu-bar">
+			<div class="menu">
+				<ul class="menu-links">
+					<li class="nav-link">
+						<a href="https://noah-pesendorfer.github.io/Scrumflow-Home/">
+							<i class='bx bx-home-alt icon' ></i>
+							<span class="text nav-text">Dashboard</span>
+						</a>
+					</li>
+
+					<li class="nav-link">
+						<a href="https://noah-pesendorfer.github.io/Scrumflow-Projects/">
+							<i class='bx bx-edit icon'></i>
+							<span class="text nav-text">Projects</span>
+						</a>
+					</li>
+
+					<li class="nav-link">
+						<a href="https://noah-pesendorfer.github.io/Scrumflow-UserSettings/">
+							<i class='bx bx-cog icon'></i>
+							<span class="text nav-text">Settings</span>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+
+			<div class="bottom-content">
+				<li class="nav-link logout">
+					<a href="https://noah-pesendorfer.github.io/Scrumflow/">
+						<i class='bx bx-log-out icon' ></i>
+						<span class="text nav-text">Logout</span>
+					</a>
+				</li>
+
+				<li class="mode">
+					<div class="sun-moon">
+						<i class='bx bx-moon icon moon'></i>
+						<i class='bx bx-sun icon sun'></i>
+					</div>
+					<span class="mode-text text">Dark mode</span>
+
+					<div class="toggle-switch">
+						<span class="switch"></span>
+					</div>
+				</li>
+
+			</div>
+		</div>
+	</nav>
+
+
 	<!-- Fenster zum Hinzufügen von Projekten -->
 	<dialog id="my_modal_1" class="modal">
 		<div class="modal-box">
