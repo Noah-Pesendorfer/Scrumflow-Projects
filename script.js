@@ -50,6 +50,12 @@ function loadProjectsIntoHTML() {
                     card.classList.add('folder');
                     card.setAttribute('data-project-id', project.id);
 
+                    card.addEventListener('dblclick', () => {
+                        const projectId = project.id;
+                        window.location.href = `https://noah-pesendorfer.github.io/Scrumflow-Tasks?projektid=${projectId}`;
+                    });
+
+
                     const deleteButton = document.createElement('button');
                     deleteButton.classList.add('delete-button');
                     deleteButton.innerHTML = '&#x2716;';
