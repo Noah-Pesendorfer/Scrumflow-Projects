@@ -50,6 +50,21 @@ function loadProjectsIntoHTML() {
                     card.classList.add('folder');
                     card.setAttribute('data-project-id', project.id);
 
+                    const deleteButton = document.createElement('button');
+                    deleteButton.classList.add('delete-button');
+                    deleteButton.innerHTML = '&#x2716;';
+
+                    deleteButton.addEventListener('click', async () => {
+                        try {
+                            await deleteProject(project.id);
+                            card.remove(); // Karte aus dem DOM entfernen, nachdem das Projekt gelöscht wurde
+                        } catch (error) {
+                            console.error("Error deleting project:", error);
+                        }
+                    });
+
+                    card.appendChild(deleteButton);
+
                     const title = document.createElement('h2');
                     title.classList.add('name');
                     if (project.title.length > 14) {
@@ -108,6 +123,16 @@ function loadProjectsIntoHTML() {
         });
     } else {
       console.log("No user signed in.");
+    }
+}
+
+async function deleteProject(projectId) {
+    const user = auth.currentUser;
+    if (user) {
+        const projectRef = doc(db, "users", user.uid, "projects", projectId);
+        await deleteDoc(projectRef);
+    } else {
+        console.log("No user signed in.");
     }
 }
 
