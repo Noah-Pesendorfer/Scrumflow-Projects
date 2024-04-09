@@ -463,6 +463,7 @@ dialog{
     /*box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);*/
     padding: 20px;
 	width: 50%;
+	justify-self: center;
 }
 
 .close-icon {
@@ -559,5 +560,4 @@ dialog{
 .modal {
 	width: 100%;
 	align-items: center;
-	justify-items: center;
 }
