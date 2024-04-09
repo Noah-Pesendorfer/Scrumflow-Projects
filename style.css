@@ -393,7 +393,7 @@ body {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	font-size: 1em;
+	font-size: 1.2em;
   }
   .folder {
     height: 105px;
