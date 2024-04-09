@@ -27,14 +27,14 @@ onAuthStateChanged(auth, (user) => {
       console.log("No user is signed in.");
     }
 });
-
+const projects = [];
 function loadProjectsIntoHTML() {
     const user = auth.currentUser;
     if (user) {
         const projectsRef = collection(db, "users", user.uid, "projects");
         getDocs(projectsRef)
             .then(querySnapshot => {
-                const projects = [];
+
                 querySnapshot.forEach(doc => {
                     const projectData = doc.data();
                     const project = { id: doc.id, ...projectData };
@@ -169,67 +169,45 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const projectsRef = collection(db, "users", user.uid, "projects");
-        // Überprüfen, ob ein Projekt mit demselben Titel bereits existiert
-        const queryRef = query(projectsRef, where("title", "==", projectTitle));
-        getDocs(queryRef).then((querySnapshot) => {
-            if (!querySnapshot.empty) {
-                // Ein Projekt mit demselben Titel wurde gefunden
-                alert("A project with the same title already exists. Please choose a different title.");
-                return;
-            } else {
-                // Füge das neue Projekt hinzu, wenn kein Projekt mit demselben Titel gefunden wurde
-                addDoc(projectsRef, newProject).then(docRef => {
-                    newProject.id = docRef.id;
 
-                    // Ansicht schließen
-                    const my_modal_1 = document.getElementById('my_modal_1');
-                    my_modal_1.close();
-
-                    // Zurücksetzen der Felder
-                    const inputText = document.querySelector('#my_modal_1 .input-text');
-                    const inputDate = document.querySelector('#my_modal_1 .input-date');
-                    const selectCategory = document.querySelector('#my_modal_1 .select-category');
-
-                    inputText.value = '';
-                    inputDate.value = '';
-                    selectCategory.selectedIndex = 0;
-
-                    // Seite neu laden
-                    location.reload();
-
-                }).catch(error => {
-                    console.error("Error adding event: ", error);
-                });
+        let titleExists = false;
+        projects.forEach(project => {
+            if (project.title === projectTitle) {
+                // Der Titel existiert bereits in einem der Projekte
+                titleExists = true;
+                return; // Beende die Schleife vorzeitig
             }
-        }).catch(error => {
-            console.error("Error checking for existing projects: ", error);
         });
 
-        /*addDoc(projectsRef, newProject).then(docRef => {
-            newProject.id = docRef.id;
+        if(titleExists){
+            alert("A project with the same title already exists. Please choose a different title.");
+        }else{
+            addDoc(projectsRef, newProject).then(docRef => {
+                newProject.id = docRef.id;
 
-            //projects.push(newProject);
+                //projects.push(newProject);
 
 
-            //Ansicht schließen
-            const my_modal_1 = document.getElementById('my_modal_1');
-            my_modal_1.close();
+                //Ansicht schließen
+                const my_modal_1 = document.getElementById('my_modal_1');
+                my_modal_1.close();
 
-            // Zurücksetzen der Felder
-            const inputText = document.querySelector('#my_modal_1 .input-text');
-            const inputDate = document.querySelector('#my_modal_1 .input-date');
-            const selectCategory = document.querySelector('#my_modal_1 .select-category');
+                // Zurücksetzen der Felder
+                const inputText = document.querySelector('#my_modal_1 .input-text');
+                const inputDate = document.querySelector('#my_modal_1 .input-date');
+                const selectCategory = document.querySelector('#my_modal_1 .select-category');
 
-            inputText.value = '';
-            inputDate.value = '';
-            selectCategory.selectedIndex = 0;
+                inputText.value = '';
+                inputDate.value = '';
+                selectCategory.selectedIndex = 0;
 
-            //Seite neu laden
-            location.reload();
+                //Seite neu laden
+                location.reload();
 
-        }).catch(error => {
-            console.error("Error adding event: ", error);
-        });*/
+            }).catch(error => {
+                console.error("Error adding event: ", error);
+            });
+        }
     });
 });
 
