@@ -119,7 +119,7 @@ function loadProjectsIntoHTML() {
                     else{
                         status = project.status;
                     }
-                    option2.textContent = status
+                    option2.textContent = "Status: " + status;
                     options.appendChild(option2);
 
                     card.appendChild(options);
