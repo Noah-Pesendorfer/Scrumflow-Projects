@@ -461,12 +461,8 @@ dialog{
 }
 .modal-box {
     background-color: white;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /*box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);*/
     padding: 20px;
-	border-radius: 20px;
-	border: 0;
-	height: 40%;
-	width: 40%;
 }
 
 .close-icon {
@@ -558,4 +554,14 @@ dialog{
 
 .delete-button:hover {
 	color: #ff0000; /* Rot */
+}
+
+.modal{
+	background-color: white;
+	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	padding: 20px;
+	border-radius: 20px;
+	border: 0;
+	height: 40%;
+	width: 40%;
 }
