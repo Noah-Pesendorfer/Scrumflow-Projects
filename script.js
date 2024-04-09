@@ -112,8 +112,14 @@ function loadProjectsIntoHTML() {
                     options.appendChild(option1);
 
                     const option2 = document.createElement('h5');
-                    const endDate = project.endDate.toDate();
-                    option2.textContent = endDate.toDateString();
+                    let status;
+                    if(!project.status){
+                        status = "Not Completed"
+                    }
+                    else{
+                        status = project.status;
+                    }
+                    option2.textContent = status
                     options.appendChild(option2);
 
                     card.appendChild(options);
@@ -143,7 +149,6 @@ async function deleteProject(projectId) {
 }
 
 const titleEl = document.querySelector('.input-text');
-const dateEl = document.querySelector('.input-date');
 const category = document.querySelector('.select-category');
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -152,13 +157,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log("Add-Funktion")
         let projectTitle = titleEl.value;
-        let projectDate = new Date(dateEl.value);
         let projectCategory = category.value;
 
         const newProject = {
             title: projectTitle,
-            endDate: projectDate,
-            category: projectCategory
+            category: projectCategory,
+            status: "Not Completed"
         }
 
 
@@ -194,11 +198,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Zurücksetzen der Felder
                 const inputText = document.querySelector('#my_modal_1 .input-text');
-                const inputDate = document.querySelector('#my_modal_1 .input-date');
                 const selectCategory = document.querySelector('#my_modal_1 .select-category');
 
                 inputText.value = '';
-                inputDate.value = '';
                 selectCategory.selectedIndex = 0;
 
                 //Seite neu laden
