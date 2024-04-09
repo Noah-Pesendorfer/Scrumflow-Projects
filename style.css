@@ -420,25 +420,14 @@ body {
 .folder:before {
     content: "";
     width: 50%;
-    height: 12px;
+    height: 10px;
     border-radius: 12px 12px 0 0;
     background-color: #e0e0e0; /* Akzentfarbe für das "Tab" */
     position: absolute;
-    top: -12px;
+    top: -10px;
     left: 25%; /* Zentriert das Tab über dem Ordner */
     transition: background-color 0.3s ease; /* Glatte Übergänge für Hover-Effekt */
 }
-
-.folder::after {
-    content: '';
-    position: absolute;
-    left:  0.8em;
-    width: 4em;
-    height: 5px;
-    top: -0.8em;
-    background: #7036E9; /* Helle Akzentfarbe */
-    border-radius: 0 0 5px 5px;
-}  
   
   .options {
 	display: flex;
