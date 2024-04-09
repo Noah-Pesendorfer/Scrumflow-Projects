@@ -83,31 +83,29 @@
 	</nav>
 
 
-	<!-- Fenster zum Hinzufügen von Projekten -->
-	<dialog id="my_modal_1" class="modal">
-		<div class="modal-box">
-			<button class="close-icon" onclick="my_modal_1.close()">&times;</button>
-			<h3>Add Project</h3>
-			<input type="text" placeholder="Name of the project" class="input-text"/>
-			<div class="select-container">
-				<p>Category</p>
-				<select id="category" class="select-category">
-					<option selected="">Select category</option>
-					<option value="School">School</option>
-					<option value="Work">Work</option>
-					<option value="Leisure">Leisure Time</option>
-				</select>
-			</div>
-			<div class="modal-action">
-				<button id="submitBtn" class="submit-btn">Submit</button>
-			</div>
-		</div>
-	</dialog>
-	
-
 
 	<!-- CONTENT -->
 	<section id="content">
+		<!-- Fenster zum Hinzufügen von Projekten -->
+		<dialog id="my_modal_1" class="modal">
+			<div class="modal-box">
+				<button class="close-icon" onclick="my_modal_1.close()">&times;</button>
+				<h3>Add Project</h3>
+				<input type="text" placeholder="Name of the project" class="input-text"/>
+				<div class="select-container">
+					<p>Category</p>
+					<select id="category" class="select-category">
+						<option selected="">Select category</option>
+						<option value="School">School</option>
+						<option value="Work">Work</option>
+						<option value="Leisure">Leisure Time</option>
+					</select>
+				</div>
+				<div class="modal-action">
+					<button id="submitBtn" class="submit-btn">Submit</button>
+				</div>
+			</div>
+		</dialog>
 
 		<!-- MAIN -->
 		<main>
