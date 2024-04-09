@@ -429,10 +429,6 @@ body {
     transition: background-color 0.3s ease; /* Glatte Übergänge für Hover-Effekt */
 }
 
-.folder:hover:before {
-    background-color: #cccccc; /* Dunklere Akzentfarbe beim Hover */
-}
-
 .folder::after {
     content: '';
     position: absolute;
