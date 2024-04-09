@@ -554,3 +554,7 @@ dialog{
 .delete-button:hover {
 	color: #ff0000; /* Rot */
 }
+
+.modal {
+	width: 50%;
+}
