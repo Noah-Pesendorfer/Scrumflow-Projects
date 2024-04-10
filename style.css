@@ -403,7 +403,7 @@ body {
     background-color: #f8f9fa; /* Ein sanfterer Weißton */
     border: 1px solid #e0e0e0; /* Weicheres Grau für die Grenze */
     border-radius: 12px; /* Stärker gerundete Ecken */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Weicherer Schatten für mehr Tiefe */
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Weicherer Schatten für mehr Tiefe */
     padding: 0.5em 1em;
     display: flex;
     justify-content: space-around;
